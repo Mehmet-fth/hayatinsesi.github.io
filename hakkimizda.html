@@ -1,64 +1,148 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hakkımızda - Hayatın Sesi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      background-color: #0d2b1e;
-      color: white;
-      font-family: 'Montserrat', sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0a2e1a;
+      color: #fff;
+      overflow-x: hidden;
+      animation: fadeIn 1s ease-in;
     }
-    header {
-      background-color: #14532d;
-      padding: 20px;
-      text-align: center;
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-    header h1 {
-      margin: 0;
-      font-size: 32px;
+
+    header img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
     }
+
+    nav {
+      background-color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      color: #00ff88;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .menu-toggle {
+      font-size: 1.5rem;
+      color: #00ff88;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      background-color: #111;
+      animation: slideDown 0.4s ease-in-out forwards;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .menu a {
+      color: #00ff88;
+      text-decoration: none;
+      padding: 1rem;
+      border-bottom: 1px solid #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #222;
+      color: #fff;
+    }
+
+    .show {
+      display: flex;
+    }
+
     main {
-      padding: 40px;
-      max-width: 800px;
-      margin: auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      animation: fadeIn 1.2s ease-in;
     }
-    section {
-      margin-bottom: 30px;
+
+    h1, h2 {
+      color: #00ff88;
+      transition: color 0.3s ease-in-out;
     }
-    footer {
-      background-color: #1e3a2f;
-      padding: 20px;
-      text-align: center;
-      font-size: 14px;
-      color: #ccc;
+
+    p {
+      line-height: 1.6;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #c0ffc8;
+      margin: 2rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid #00ff88;
     }
   </style>
 </head>
 <body>
+  <nav>
+    <div class="logo">Hayatın Sesi</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </nav>
+  <div class="menu" id="menu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="blog.html">Blog</a>
+    <a href="youtube.html">YouTube</a>
+    <a href="instagram.html">Instagram</a>
+    <a href="bagis.html">Bağış</a>
+  </div>
+
   <header>
-    <h1>Hakkımızda</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Kaaba_Masjid_Al-Haram_Mecca.jpg" alt="Kâbe" />
   </header>
+
   <main>
-    <section>
-      <p>
-        “Hayatın Sesi”, yalnızca bir web sitesi değil, kalplere dokunan bir davettir. Bu site, İslami değerleri yaymak,
-        insanlara umut vermek ve Allah’ın mesajını en güzel şekilde iletmek amacıyla kurulmuştur.
-      </p>
-      <p>
-        Her içerik, yalnızca Allah rızası için hazırlanır. Para kazanmak değil, gönüllere ulaşmak hedeflenir.
-      </p>
-      <p>
-        Amacımız, sosyal medyada ve dijital ortamda hayırlı izler bırakmak, karanlığa bir ışık olmaktır.
-      </p>
-    </section>
+    <h1>Hakkımızda</h1>
+    <h2>Biz Kimiz?</h2>
+    <p>“Hayatın Sesi”, Allah rızasını gözeterek İslâmî değerleri yaymayı amaçlayan bir gönüllü platformdur. Kur’an ve sünnete dayalı bilgi, bilinç ve maneviyat için kurulmuştur.</p>
+
+    <h2>Amacımız</h2>
+    <p>İnternet dünyasında temiz, güvenilir ve samimi bir İslami içerik kaynağı olmak istiyoruz. Ayrıca sosyal duyarlılığı artırarak, yardımlaşma ve dayanışmayı teşvik etmek de temel hedeflerimizdendir.</p>
+
+    <blockquote>“Ve de ki: Rabbim! Bilgimi artır.” (Tâhâ Suresi, 114)</blockquote>
+
+    <p>Sen de bu sese kulak ver, bu yolculukta bize katıl.</p>
   </main>
-  <footer>
-    &copy; 2025 Hayatın Sesi. Tüm hakları saklıdır.
-  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>

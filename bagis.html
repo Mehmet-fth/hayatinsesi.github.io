@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bağış | Hayatın Sesi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -19,7 +19,7 @@
 
     .fade-in {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
       animation: fadeInUp 1s forwards;
     }
 
@@ -34,8 +34,8 @@
       background-color: rgba(0, 0, 0, 0.7);
       padding: 1rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .menu-toggle {
@@ -49,36 +49,17 @@
     .menu-links {
       display: none;
       flex-direction: column;
-      background-color: rgba(0, 0, 0, 0.8);
-      position: absolute;
-      top: 70px;
-      left: 0;
-      width: 100%;
-      animation: slideDown 0.3s ease forwards;
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      margin-top: 1rem;
     }
 
     .menu-links a {
       color: #00ff88;
       text-decoration: none;
-      padding: 1rem;
+      padding: 0.5rem 0;
       font-weight: bold;
-      text-align: center;
-      border-top: 1px solid #00ff88;
     }
 
     .menu-links a:hover {
-      background-color: #004d2f;
       color: #ffffff;
     }
 
@@ -102,8 +83,8 @@
 
     .hero {
       text-align: center;
-      padding: 4rem 1rem 2rem;
-      background-color: rgba(0, 0, 0, 0.6);
+      padding: 3rem 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
     .hero h1 {
@@ -111,31 +92,33 @@
       color: #00ff88;
     }
 
-    .content {
+    .donation-section {
       max-width: 800px;
       margin: 2rem auto;
-      background-color: rgba(0, 0, 0, 0.75);
-      padding: 2rem;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-left: 5px solid #00ff88;
       border-radius: 10px;
-      box-shadow: 0 0 10px #00ff88;
     }
 
-    .content h2 {
+    .donation-section h2 {
       color: #c0ffc8;
     }
 
-    .content p {
+    .donation-section p, .donation-section a {
       color: #e2ffe7;
     }
 
-    .email-box {
-      background-color: #00391f;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-top: 1rem;
-      font-weight: bold;
-      color: #00ff88;
-      text-align: center;
+    .donation-section a {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .menu-links {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 1rem;
+        border-top: 1px solid #00ff88;
+      }
     }
   </style>
 </head>
@@ -161,20 +144,17 @@
     <h1>Bağış Yap</h1>
   </section>
 
-  <div class="content fade-in">
-    <h2>SMA Hastalarına Umut Olun</h2>
-    <p>
-      SMA hastalığıyla mücadele eden kardeşlerimize destek olmak, bir müminin en güzel vasıflarındandır.
-      Hayatın Sesi olarak, ihtiyaç sahibi ailelerin sesi olmak istiyoruz. 
-    </p>
-    <p>
-      Lütfen siz de bu iyilik zincirine katılın. Şimdilik bağış bilgilerini doğrudan e-posta üzerinden yönlendirebilirsiniz.
-    </p>
+  <div class="donation-section fade-in">
+    <h2>SMA Hastaları İçin Özel Bağış</h2>
+    <p>SMA hastaları için umut olmak ister misiniz? Destekleriniz, tedaviye ulaşmalarını kolaylaştırıyor.</p>
+    <p>Instagram: <a href="https://instagram.com/sma.destek" target="_blank">@sma.destek</a></p>
+    <p>Web Sitesi: <a href="https://www.smadestek.org" target="_blank">www.smadestek.org</a></p>
+  </div>
 
-    <div class="email-box">
-      İletişim ve bağış için: <br>
-      <a href="mailto:bagis@hayatinsesi.com" style="color: #00ff88;">bagis@hayatinsesi.com</a>
-    </div>
+  <div class="donation-section fade-in" style="animation-delay: 0.5s;">
+    <h2>Genel Bağış Sistemi</h2>
+    <p>Hayatın Sesi platformunu desteklemek isterseniz, aşağıdaki e-posta adresiyle iletişime geçebilirsiniz:</p>
+    <p><strong>E-posta:</strong> <a href="mailto:hayatinsesi07@gmail.com">hayatinsesi07@gmail.com</a></p>
   </div>
 
   <script>

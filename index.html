@@ -16,92 +16,60 @@
       background-position: center;
       background-attachment: fixed;
     }
-
-    /* Menü stilleri */
-    .menu-toggle {
-      display: none;
-      background-color: transparent;
-      border: none;
-      color: #00ff88;
-      font-size: 2rem;
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      cursor: pointer;
-    }
-
-    nav {
+    .navbar {
       background-color: rgba(0, 0, 0, 0.7);
       padding: 1rem;
-      text-align: center;
+      position: relative;
     }
-
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+    .menu-toggle {
+      font-size: 2rem;
+      color: #00ff88;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
-
-    nav a {
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      margin-top: 1rem;
+    }
+    .menu-links a {
       color: #00ff88;
       text-decoration: none;
-      margin: 0 1rem;
+      padding: 0.5rem 0;
       font-weight: bold;
-      transition: color 0.3s;
     }
-
-    nav a:hover {
-      color: #fff;
+    .menu-links a:hover {
+      color: #ffffff;
     }
-
-    /* Mobil menü */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
+    .menu-links.active {
+      display: flex;
     }
-
     .hero {
       text-align: center;
       padding: 6rem 1rem 2rem;
       background-color: rgba(0, 0, 0, 0.5);
     }
-
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
       color: #00ff88;
     }
-
     .hero p {
       font-size: 1.2rem;
       max-width: 600px;
       margin: 0 auto 2rem;
     }
-
     .dua {
       background-color: rgba(10, 46, 26, 0.85);
       padding: 2rem;
       text-align: center;
     }
-
     .dua blockquote {
       font-style: italic;
       font-size: 1.2rem;
       color: #c0ffc8;
     }
-
     .bagis {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 1.5rem;
@@ -111,7 +79,6 @@
       border-radius: 10px;
       text-align: center;
     }
-
     .bagis a {
       color: #fff;
       background-color: #00aa55;
@@ -121,18 +88,15 @@
       display: inline-block;
       margin-top: 1rem;
     }
-
     .bagis a:hover {
       background-color: #008844;
     }
   </style>
 </head>
 <body>
-
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-  <nav>
-    <div class="nav-links" id="nav-links">
+  <div class="navbar">
+    <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+    <div class="menu-links" id="menuLinks">
       <a href="index.html">Ana Sayfa</a>
       <a href="hakkimizda.html">Hakkımızda</a>
       <a href="blog.html">Blog</a>
@@ -140,7 +104,7 @@
       <a href="instagram.html">Instagram</a>
       <a href="bagis.html">Bağış</a>
     </div>
-  </nav>
+  </div>
 
   <section class="hero">
     <h1>Hayatın Sesi'ne Hoş Geldiniz</h1>
@@ -159,9 +123,9 @@
 
   <script>
     function toggleMenu() {
-      const links = document.getElementById('nav-links');
-      links.classList.toggle('active');
+      const menu = document.getElementById("menuLinks");
+      menu.classList.toggle("active");
     }
   </script>
 </body>
-</html>
+  </html>

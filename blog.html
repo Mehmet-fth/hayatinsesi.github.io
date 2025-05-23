@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog | Hayatın Sesi</title>
+  <title>Hayatın Sesi | Günlük İslami İçerikler</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -17,23 +17,12 @@
       background-attachment: fixed;
     }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s forwards;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    .fade-in { opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
     .navbar {
       background-color: rgba(0, 0, 0, 0.7);
       padding: 1rem;
-      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -47,80 +36,28 @@
       cursor: pointer;
     }
 
-    .menu-links {
-      display: none;
-      flex-direction: column;
-      margin-top: 1rem;
-    }
+    .menu-links { display: none; flex-direction: column; margin-top: 1rem; }
+    .menu-links a { color: #00ff88; text-decoration: none; padding: 0.5rem 0; font-weight: bold; }
+    .menu-links a:hover { color: #ffffff; }
+    .menu-links.active { display: flex; }
 
-    .menu-links a {
-      color: #00ff88;
-      text-decoration: none;
-      padding: 0.5rem 0;
-      font-weight: bold;
-    }
+    .profile { display: flex; align-items: center; }
+    .profile img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #00ff88; margin-left: 1rem; }
 
-    .menu-links a:hover {
-      color: #ffffff;
-    }
+    .hero { text-align: center; padding: 4rem 1rem 2rem; background-color: rgba(0, 0, 0, 0.5); }
+    .hero h1 { font-size: 2.5rem; color: #00ff88; }
 
-    .menu-links.active {
-      display: flex;
-    }
-
-    .profile {
-      display: flex;
-      align-items: center;
-    }
-
-    .profile img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-left: 1rem;
-      border: 2px solid #00ff88;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 4rem 1rem 2rem;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #00ff88;
-    }
-
-    .blog-container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-
-    .blog-post {
+    .content-container { max-width: 800px; margin: 2rem auto; padding: 1rem; }
+    .content-box {
       background-color: rgba(0, 0, 0, 0.7);
-      border-left: 5px solid #00ff88;
       padding: 1rem;
       margin-bottom: 1.5rem;
       border-radius: 8px;
-      animation: fadeInUp 0.8s ease forwards;
+      border-left: 5px solid #00ff88;
     }
+    .content-box h2 { margin-top: 0; color: #c0ffc8; }
+    .content-box p { color: #e2ffe7; }
 
-    .blog-post h2 {
-      margin-top: 0;
-      color: #c0ffc8;
-    }
-
-    .blog-post p {
-      color: #e2ffe7;
-    }
-
-    .blog-post a {
-      color: #00ff88;
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
@@ -142,20 +79,30 @@
   </div>
 
   <section class="hero fade-in">
-    <h1>Hayatın Sesi Blog</h1>
+    <h1>Hayatın Sesi Blog | Günlük İslami İçerikler</h1>
   </section>
 
-  <div class="blog-container">
-    <div class="blog-post fade-in">
-      <h2>Sabah Namazına Kalkmak Neden Önemlidir?</h2>
-      <p>Sabah namazı, günün bereketidir. Allah’a en yakın olunan vakitlerde yapılan ibadet, ruhu ve bedeni arındırır...</p>
-      <a href="#">Devamını Oku</a>
+  <div class="content-container" id="contentContainer">
+    <div class="content-box fade-in">
+      <h2>Günün Ayeti</h2>
+      <p id="dailyAyah">Yükleniyor...</p>
     </div>
 
-    <div class="blog-post fade-in" style="animation-delay: 0.3s;">
-      <h2>İslam’da Sosyal Medya Kullanımı</h2>
-      <p>Müslüman kimliğiyle sosyal medyada nasıl bir duruş sergilemeliyiz? Niyetimiz, dilimiz ve davranışlarımız nasıl olmalı?</p>
-      <a href="#">Devamını Oku</a>
+    <div class="content-box fade-in">
+      <h2>Günün Hadisi</h2>
+      <p id="dailyHadith">Yükleniyor...</p>
+    </div>
+
+    <div class="content-box fade-in">
+      <h2>Günün Duası</h2>
+      <p id="dailyDua">Yükleniyor...</p>
+    </div>
+
+    <div class="content-box fade-in">
+      <h2>Namaz Vakitleri (Adıyaman)</h2>
+      <ul id="prayerTimes">
+        <li>Yükleniyor...</li>
+      </ul>
     </div>
   </div>
 
@@ -164,6 +111,34 @@
       const menu = document.getElementById("menuLinks");
       menu.classList.toggle("active");
     }
+
+    fetch('https://api.alquran.cloud/v1/ayah/2:255')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('dailyAyah').textContent = data.data.text;
+      });
+
+    fetch('https://hadithapi.com/api/hadiths/random?apiKey=$2y$10$mMluJjun5TcJthpmLMo4uKDqQoGioQyLq0NTLXRUk10uGxgoLDq')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('dailyHadith').textContent = data.hadith.text;
+      });
+
+    const duas = ['Allahümme inni es’elüke’l-hüda ve’t-tuka ve’l-‘afafe ve’l-ğina.', 'Rabbena atina fid-dünya haseneten ve fil-ahirati haseneten ve kına azaben-nar.', 'Allahümme ecirni minen-nar.'];
+    document.getElementById('dailyDua').textContent = duas[new Date().getDate() % duas.length];
+
+    fetch('https://api.aladhan.com/v1/timingsByCity?city=Adiyaman&country=Turkey&method=2')
+      .then(response => response.json())
+      .then(data => {
+        const timings = data.data.timings;
+        const prayerTimesList = document.getElementById('prayerTimes');
+        prayerTimesList.innerHTML = '';
+        for (const [name, time] of Object.entries(timings)) {
+          const li = document.createElement('li');
+          li.textContent = `${name}: ${time}`;
+          prayerTimesList.appendChild(li);
+        }
+      });
   </script>
 </body>
-    </html>
+  </html>

@@ -1,39 +1,169 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hayatın Sesi | Blog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | Hayatın Sesi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
-      background-color: #0d2f1f;
-      color: white;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 20px;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0a2e1a;
+      color: #fff;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/37/Holy_Quran.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
-    a { color: #90ee90; }
-    .post {
-      background-color: #143d29;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 10px;
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .menu-toggle {
+      font-size: 2rem;
+      color: #00ff88;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      margin-top: 1rem;
+    }
+
+    .menu-links a {
+      color: #00ff88;
+      text-decoration: none;
+      padding: 0.5rem 0;
+      font-weight: bold;
+    }
+
+    .menu-links a:hover {
+      color: #ffffff;
+    }
+
+    .menu-links.active {
+      display: flex;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-left: 1rem;
+      border: 2px solid #00ff88;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #00ff88;
+    }
+
+    .blog-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .blog-post {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-left: 5px solid #00ff88;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .blog-post h2 {
+      margin-top: 0;
+      color: #c0ffc8;
+    }
+
+    .blog-post p {
+      color: #e2ffe7;
+    }
+
+    .blog-post a {
+      color: #00ff88;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Blog</h1>
-  <div class="post">
-    <h2>İlk Yazı: Niyetimiz Allah Rızası</h2>
-    <p>Bu blog, Allah’ın rızasını gözeterek kuruldu. Amacımız, İslamî mesajları samimiyetle yaymak.</p>
-    <small>Yayın Tarihi: 22 Mayıs 2025</small>
+  <div class="navbar">
+    <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+    <div class="profile">
+      <span style="color: #00ff88; font-weight: bold;">Hayatın Sesi</span>
+      <img src="images/hayatinsesi-logo.png" alt="Profil Resmi" />
+    </div>
   </div>
 
-  <div class="post">
-    <h2>İkinci Yazı: Sosyal Medyada İhlâs</h2>
-    <p>İçerik üretirken dikkat etmemiz gereken en önemli şey ihlâstır. Görünmek için değil, duyurmak için üretmeliyiz.</p>
-    <small>Yayın Tarihi: 22 Mayıs 2025</small>
+  <div class="menu-links" id="menuLinks">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="blog.html">Blog</a>
+    <a href="youtube.html">YouTube</a>
+    <a href="instagram.html">Instagram</a>
+    <a href="bagis.html">Bağış</a>
   </div>
 
-  <p><a href="index.html">Ana Sayfa'ya Dön</a></p>
+  <section class="hero fade-in">
+    <h1>Hayatın Sesi Blog</h1>
+  </section>
+
+  <div class="blog-container">
+    <div class="blog-post fade-in">
+      <h2>Sabah Namazına Kalkmak Neden Önemlidir?</h2>
+      <p>Sabah namazı, günün bereketidir. Allah’a en yakın olunan vakitlerde yapılan ibadet, ruhu ve bedeni arındırır...</p>
+      <a href="#">Devamını Oku</a>
+    </div>
+
+    <div class="blog-post fade-in" style="animation-delay: 0.3s;">
+      <h2>İslam’da Sosyal Medya Kullanımı</h2>
+      <p>Müslüman kimliğiyle sosyal medyada nasıl bir duruş sergilemeliyiz? Niyetimiz, dilimiz ve davranışlarımız nasıl olmalı?</p>
+      <a href="#">Devamını Oku</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuLinks");
+      menu.classList.toggle("active");
+    }
+  </script>
 </body>
-</html>
+    </html>

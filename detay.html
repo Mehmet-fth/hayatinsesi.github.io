@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detay | Hayatın Sesi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0a2e1a;
+      color: #fff;
+      padding: 2rem;
+    }
+
+    .icerik {
+      background-color: rgba(0,0,0,0.7);
+      padding: 2rem;
+      border-left: 5px solid #00ff88;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #00ff88;
+    }
+
+    a {
+      color: #00ff88;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="icerik">
+    <h1 id="baslik">Yükleniyor...</h1>
+    <p id="icerik">İçerik getiriliyor...</p>
+    <p><a href="blog.html">Geri Dön</a></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type");
+    const id = params.get("id");
+
+    const icerikler = {
+      makale: {
+        1: {
+          baslik: "Sabah Namazına Kalkmak Neden Önemlidir?",
+          metin: "Sabah namazı, günün en feyizli vaktinde Allah’a yönelmektir. Bu vakitte yapılan ibadet, kalbi huzurla doldurur ve güne bereket getirir..."
+        },
+        2: {
+          baslik: "İslam’da Sosyal Medya Kullanımı",
+          metin: "Müslüman birey, sosyal medyada da Allah’ın rızasını gözetmelidir. Paylaşımlar, yorumlar ve içerikler İslami ölçülere uygun olmalıdır..."
+        }
+      }
+    };
+
+    const baslikEl = document.getElementById("baslik");
+    const icerikEl = document.getElementById("icerik");
+
+    if (type && id && icerikler[type] && icerikler[type][id]) {
+      const veri = icerikler[type][id];
+      baslikEl.textContent = veri.baslik;
+      icerikEl.textContent = veri.metin;
+    } else {
+      baslikEl.textContent = "İçerik Bulunamadı";
+      icerikEl.textContent = "Üzgünüz, aradığınız içerik sistemde mevcut değil.";
+    }
+  </script>
+</body>
+</html>

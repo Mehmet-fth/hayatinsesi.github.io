@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hayatın Sesi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -16,11 +16,29 @@
       background-position: center;
       background-attachment: fixed;
     }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .navbar {
       background-color: rgba(0, 0, 0, 0.7);
       padding: 1rem;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
+
     .menu-toggle {
       font-size: 2rem;
       color: #00ff88;
@@ -28,97 +46,98 @@
       border: none;
       cursor: pointer;
     }
+
     .menu-links {
       display: none;
       flex-direction: column;
       margin-top: 1rem;
     }
+
     .menu-links a {
       color: #00ff88;
       text-decoration: none;
       padding: 0.5rem 0;
       font-weight: bold;
     }
+
     .menu-links a:hover {
       color: #ffffff;
     }
+
     .menu-links.active {
       display: flex;
     }
+
+    .profile {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-left: 1rem;
+      border: 2px solid #00ff88;
+    }
+
     .hero {
       text-align: center;
       padding: 6rem 1rem 2rem;
       background-color: rgba(0, 0, 0, 0.5);
     }
+
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
       color: #00ff88;
     }
+
     .hero p {
       font-size: 1.2rem;
       max-width: 600px;
       margin: 0 auto 2rem;
     }
+
     .dua {
       background-color: rgba(10, 46, 26, 0.85);
       padding: 2rem;
       text-align: center;
     }
+
     .dua blockquote {
       font-style: italic;
       font-size: 1.2rem;
       color: #c0ffc8;
-    }
-    .bagis {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 1.5rem;
-      margin: 2rem auto;
-      max-width: 400px;
-      border: 2px solid #00ff88;
-      border-radius: 10px;
-      text-align: center;
-    }
-    .bagis a {
-      color: #fff;
-      background-color: #00aa55;
-      padding: 0.7rem 1.2rem;
-      text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-    .bagis a:hover {
-      background-color: #008844;
     }
   </style>
 </head>
 <body>
   <div class="navbar">
     <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
-    <div class="menu-links" id="menuLinks">
-      <a href="index.html">Ana Sayfa</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="blog.html">Blog</a>
-      <a href="youtube.html">YouTube</a>
-      <a href="instagram.html">Instagram</a>
-      <a href="bagis.html">Bağış</a>
+    <div class="profile">
+      <span style="color: #00ff88; font-weight: bold;">Hayatın Sesi</span>
+      <img src="images/hayatinsesi-logo.png" alt="Profil Resmi" />
     </div>
   </div>
 
-  <section class="hero">
+  <div class="menu-links" id="menuLinks">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="blog.html">Blog</a>
+    <a href="youtube.html">YouTube</a>
+    <a href="instagram.html">Instagram</a>
+    <a href="bagis.html">Bağış</a>
+  </div>
+
+  <section class="hero fade-in">
     <h1>Hayatın Sesi'ne Hoş Geldiniz</h1>
     <p>Allah rızası için paylaşılan içeriklerle dolu, huzurlu bir platforma hoş geldiniz.</p>
   </section>
 
-  <section class="dua">
+  <section class="dua fade-in" style="animation-delay: 0.5s;">
     <blockquote>“Rabbim! Gönlümü aç, işimi kolaylaştır. Dilimden düğümü çöz ki sözümü anlasınlar.” (Tâhâ Sûresi, 25-28)</blockquote>
-  </section>
-
-  <section class="bagis">
-    <h2>SMA Hastalarına Umut Ol</h2>
-    <p>Bağış yaparak bir cana nefes olabilirsin. Allah razı olsun.</p>
-    <a href="#">Bağış Yap</a>
   </section>
 
   <script>
@@ -128,4 +147,4 @@
     }
   </script>
 </body>
-  </html>
+</html>

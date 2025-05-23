@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="tr">
+<!DOCTYPE html>
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +16,32 @@
       background-position: center;
       background-attachment: fixed;
     }
+
+    /* Menü stilleri */
+    .menu-toggle {
+      display: none;
+      background-color: transparent;
+      border: none;
+      color: #00ff88;
+      font-size: 2rem;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+    }
+
     nav {
       background-color: rgba(0, 0, 0, 0.7);
       padding: 1rem;
+      text-align: center;
+    }
+
+    .nav-links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
     }
+
     nav a {
       color: #00ff88;
       text-decoration: none;
@@ -29,34 +49,59 @@
       font-weight: bold;
       transition: color 0.3s;
     }
+
     nav a:hover {
       color: #fff;
     }
+
+    /* Mobil menü */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
     .hero {
       text-align: center;
       padding: 6rem 1rem 2rem;
       background-color: rgba(0, 0, 0, 0.5);
     }
+
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
       color: #00ff88;
     }
+
     .hero p {
       font-size: 1.2rem;
       max-width: 600px;
       margin: 0 auto 2rem;
     }
+
     .dua {
       background-color: rgba(10, 46, 26, 0.85);
       padding: 2rem;
       text-align: center;
     }
+
     .dua blockquote {
       font-style: italic;
       font-size: 1.2rem;
       color: #c0ffc8;
     }
+
     .bagis {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 1.5rem;
@@ -66,6 +111,7 @@
       border-radius: 10px;
       text-align: center;
     }
+
     .bagis a {
       color: #fff;
       background-color: #00aa55;
@@ -75,31 +121,47 @@
       display: inline-block;
       margin-top: 1rem;
     }
+
     .bagis a:hover {
       background-color: #008844;
     }
   </style>
 </head>
 <body>
+
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
   <nav>
-    <a href="index.html">Ana Sayfa</a>
-    <a href="hakkimizda.html">Hakkımızda</a>
-    <a href="blog.html">Blog</a>
-    <a href="youtube.html">YouTube</a>
-    <a href="instagram.html">Instagram</a>
-    <a href="bagis.html">Bağış</a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="blog.html">Blog</a>
+      <a href="youtube.html">YouTube</a>
+      <a href="instagram.html">Instagram</a>
+      <a href="bagis.html">Bağış</a>
+    </div>
   </nav>
+
   <section class="hero">
     <h1>Hayatın Sesi'ne Hoş Geldiniz</h1>
     <p>Allah rızası için paylaşılan içeriklerle dolu, huzurlu bir platforma hoş geldiniz.</p>
   </section>
+
   <section class="dua">
     <blockquote>“Rabbim! Gönlümü aç, işimi kolaylaştır. Dilimden düğümü çöz ki sözümü anlasınlar.” (Tâhâ Sûresi, 25-28)</blockquote>
   </section>
+
   <section class="bagis">
     <h2>SMA Hastalarına Umut Ol</h2>
     <p>Bağış yaparak bir cana nefes olabilirsin. Allah razı olsun.</p>
     <a href="#">Bağış Yap</a>
   </section>
+
+  <script>
+    function toggleMenu() {
+      const links = document.getElementById('nav-links');
+      links.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>

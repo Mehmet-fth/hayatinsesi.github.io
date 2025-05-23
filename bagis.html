@@ -4,13 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bağış | Hayatın Sesi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
       background-color: #0a2e1a;
       color: #fff;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/37/Holy_Quran.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .navbar {
@@ -21,78 +38,117 @@
       align-items: center;
     }
 
-    .navbar a {
+    .menu-toggle {
+      font-size: 2rem;
+      color: #00ff88;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      animation: slideDown 0.3s ease forwards;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .menu-links a {
       color: #00ff88;
       text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
-    }
-
-    .sma-banner {
-      background-color: #ffd700;
-      color: #000;
       padding: 1rem;
+      font-weight: bold;
       text-align: center;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border-bottom: 3px solid #c09300;
+      border-top: 1px solid #00ff88;
     }
 
-    .sma-button {
-      background-color: #ff4444;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      margin-top: 0.5rem;
-      display: inline-block;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .sma-button:hover {
-      background-color: #cc0000;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-
-    h1 {
-      text-align: center;
-      color: #00ff88;
-    }
-
-    .donate-method {
-      background-color: rgba(255, 255, 255, 0.05);
-      border-left: 4px solid #00ff88;
-      padding: 1rem;
-      margin-bottom: 2rem;
-      border-radius: 8px;
-    }
-
-    .donate-method a {
-      color: #00ff88;
-      text-decoration: underline;
-    }
-
-    .donate-method a:hover {
+    .menu-links a:hover {
+      background-color: #004d2f;
       color: #ffffff;
     }
 
-    footer {
+    .menu-links.active {
+      display: flex;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-left: 1rem;
+      border: 2px solid #00ff88;
+    }
+
+    .hero {
       text-align: center;
+      padding: 4rem 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #00ff88;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ff88;
+    }
+
+    .content h2 {
+      color: #c0ffc8;
+    }
+
+    .content p {
+      color: #e2ffe7;
+    }
+
+    .email-box {
+      background-color: #00391f;
       padding: 1rem;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: #ccc;
+      border-radius: 8px;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #00ff88;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-
   <div class="navbar">
+    <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+    <div class="profile">
+      <span style="color: #00ff88; font-weight: bold;">Hayatın Sesi</span>
+      <img src="images/hayatinsesi-logo.png" alt="Profil Resmi" />
+    </div>
+  </div>
+
+  <div class="menu-links" id="menuLinks">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimizda.html">Hakkımızda</a>
     <a href="blog.html">Blog</a>
@@ -101,40 +157,31 @@
     <a href="bagis.html">Bağış</a>
   </div>
 
-  <div class="sma-banner">
-    <p><strong>SMA Hastası Çocuklar İçin Bir Umut Ol!</strong></p>
-    <a href="#sma-destek" class="sma-button">SMA İçin Destek Ol</a>
-  </div>
+  <section class="hero fade-in">
+    <h1>Bağış Yap</h1>
+  </section>
 
-  <div class="container">
-    <h1>Bağış Sayfası</h1>
+  <div class="content fade-in">
+    <h2>SMA Hastalarına Umut Olun</h2>
+    <p>
+      SMA hastalığıyla mücadele eden kardeşlerimize destek olmak, bir müminin en güzel vasıflarındandır.
+      Hayatın Sesi olarak, ihtiyaç sahibi ailelerin sesi olmak istiyoruz. 
+    </p>
+    <p>
+      Lütfen siz de bu iyilik zincirine katılın. Şimdilik bağış bilgilerini doğrudan e-posta üzerinden yönlendirebilirsiniz.
+    </p>
 
-    <div class="donate-method">
-      <h2>Genel Bağış Seçenekleri</h2>
-      <p>Web sitemizi desteklemek, projelerimizin gelişmesine katkı sağlamak veya sosyal hizmetlerimize ortak olmak isterseniz aşağıdaki kanallardan bize ulaşabilirsiniz:</p>
-      <ul>
-        <li>IBAN: TR00 0000 0000 0000 0000 0000 00</li>
-        <li>PayPal: <a href="mailto:hayatinsesi@gmail.com">hayatinsesi@gmail.com</a></li>
-        <li>Kripto Cüzdan: <code>bc1qexamplekriptoadres...</code></li>
-      </ul>
-    </div>
-
-    <div id="sma-destek" class="donate-method">
-      <h2>SMA Hastaları İçin Destek Olun</h2>
-      <p>
-        SMA hastalığı, çocukların kaslarını etkileyen ciddi bir rahatsızlıktır. Tedavi masrafları oldukça yüksektir. Onlara destek olmak için güvenilir kaynakları aşağıda bulabilirsiniz:
-      </p>
-      <ul>
-        <li><a href="https://www.sma.org.tr/bagis" target="_blank">SMA Derneği Resmî Bağış Sayfası</a></li>
-        <li><a href="https://www.instagram.com/smaumutlari/" target="_blank">@smaumutlari</a> - Güncel kampanyalar</li>
-        <li><a href="https://www.valilikonayli.com" target="_blank">valilikonayli.com</a> - Onaylı bireysel yardım projeleri</li>
-      </ul>
+    <div class="email-box">
+      İletişim ve bağış için: <br>
+      <a href="mailto:bagis@hayatinsesi.com" style="color: #00ff88;">bagis@hayatinsesi.com</a>
     </div>
   </div>
 
-  <footer>
-    &copy; 2025 Hayatın Sesi. Tüm hakları saklıdır.
-  </footer>
-
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuLinks");
+      menu.classList.toggle("active");
+    }
+  </script>
 </body>
-</html>
+  </html>

@@ -6,29 +6,12 @@
   <title>Hakkımızda - Hayatın Sesi</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
       background-color: #0a2e1a;
       color: #fff;
-      overflow-x: hidden;
-      animation: fadeIn 1s ease-in;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    header img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-    }
-
     nav {
       background-color: #000;
       display: flex;
@@ -39,13 +22,17 @@
       top: 0;
       z-index: 999;
     }
-
     .logo {
+      display: flex;
+      align-items: center;
       color: #00ff88;
       font-weight: bold;
       font-size: 1.2rem;
     }
-
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
     .menu-toggle {
       font-size: 1.5rem;
       color: #00ff88;
@@ -53,51 +40,48 @@
       border: none;
       cursor: pointer;
     }
-
     .menu {
       display: none;
       flex-direction: column;
       background-color: #111;
-      animation: slideDown 0.4s ease-in-out forwards;
     }
-
-    @keyframes slideDown {
-      from { transform: translateY(-20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
     .menu a {
       color: #00ff88;
       text-decoration: none;
       padding: 1rem;
       border-bottom: 1px solid #333;
-      transition: background-color 0.3s, color 0.3s;
     }
-
     .menu a:hover {
       background-color: #222;
       color: #fff;
     }
-
     .show {
       display: flex;
     }
-
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header img {
+      max-width: 200px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+      transition: transform 0.5s ease;
+    }
+    header img:hover {
+      transform: scale(1.05);
+    }
     main {
       padding: 2rem;
       background-color: rgba(0, 0, 0, 0.6);
-      animation: fadeIn 1.2s ease-in;
     }
-
     h1, h2 {
       color: #00ff88;
-      transition: color 0.3s ease-in-out;
     }
-
     p {
       line-height: 1.6;
     }
-
     blockquote {
       font-style: italic;
       color: #c0ffc8;
@@ -109,7 +93,10 @@
 </head>
 <body>
   <nav>
-    <div class="logo">Hayatın Sesi</div>
+    <div class="logo">
+      <img src="file-C5S4uWR8HNWtgfBsjnmccW" alt="Hayatın Sesi">
+      Hayatın Sesi
+    </div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </nav>
   <div class="menu" id="menu">
@@ -122,7 +109,7 @@
   </div>
 
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Kaaba_Masjid_Al-Haram_Mecca.jpg" alt="Kâbe" />
+    <img src="file-C5S4uWR8HNWtgfBsjnmccW" alt="Hayatın Sesi Profili" />
   </header>
 
   <main>
@@ -140,9 +127,8 @@
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
+      document.getElementById("menu").classList.toggle("show");
     }
   </script>
 </body>
-</html>
+      </html>

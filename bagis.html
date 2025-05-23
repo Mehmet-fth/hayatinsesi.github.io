@@ -1,45 +1,140 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hayatın Sesi | Bağış</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bağış | Hayatın Sesi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
-      background-color: #0d2f1f;
-      color: white;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 20px;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0a2e1a;
+      color: #fff;
     }
-    .card {
-      background-color: #143d29;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    a.button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #4caf50;
-      color: white;
+
+    .navbar a {
+      color: #00ff88;
       text-decoration: none;
-      border-radius: 5px;
-      margin-top: 10px;
+      margin: 0 1rem;
+      font-weight: bold;
     }
-    a.button:hover {
-      background-color: #3c8d40;
+
+    .sma-banner {
+      background-color: #ffd700;
+      color: #000;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-bottom: 3px solid #c09300;
+    }
+
+    .sma-button {
+      background-color: #ff4444;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      display: inline-block;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .sma-button:hover {
+      background-color: #cc0000;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00ff88;
+    }
+
+    .donate-method {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-left: 4px solid #00ff88;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+    }
+
+    .donate-method a {
+      color: #00ff88;
+      text-decoration: underline;
+    }
+
+    .donate-method a:hover {
+      color: #ffffff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-  <h1>Bağış</h1>
-  <div class="card">
-    <h2>SMA Hastalarına Umut Ol</h2>
-    <p>SMA hastası çocuklar için bağış kampanyalarına destek veriyoruz. Dilerseniz siz de bir çocuğa umut olabilirsiniz.</p>
-    <p><strong>Not:</strong> Bu sayfadaki bağlantılar dış sitelere yönlendirebilir. Güvenli kaynaklardan bağış yapmaya dikkat ediniz.</p>
-    <a class="button" href="https://www.sma.org.tr/" target="_blank">SMA Derneği'ne Git</a>
+
+  <div class="navbar">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="blog.html">Blog</a>
+    <a href="youtube.html">YouTube</a>
+    <a href="instagram.html">Instagram</a>
+    <a href="bagis.html">Bağış</a>
   </div>
 
-  <p><a href="index.html">Ana Sayfa'ya Dön</a></p>
+  <div class="sma-banner">
+    <p><strong>SMA Hastası Çocuklar İçin Bir Umut Ol!</strong></p>
+    <a href="#sma-destek" class="sma-button">SMA İçin Destek Ol</a>
+  </div>
+
+  <div class="container">
+    <h1>Bağış Sayfası</h1>
+
+    <div class="donate-method">
+      <h2>Genel Bağış Seçenekleri</h2>
+      <p>Web sitemizi desteklemek, projelerimizin gelişmesine katkı sağlamak veya sosyal hizmetlerimize ortak olmak isterseniz aşağıdaki kanallardan bize ulaşabilirsiniz:</p>
+      <ul>
+        <li>IBAN: TR00 0000 0000 0000 0000 0000 00</li>
+        <li>PayPal: <a href="mailto:hayatinsesi@gmail.com">hayatinsesi@gmail.com</a></li>
+        <li>Kripto Cüzdan: <code>bc1qexamplekriptoadres...</code></li>
+      </ul>
+    </div>
+
+    <div id="sma-destek" class="donate-method">
+      <h2>SMA Hastaları İçin Destek Olun</h2>
+      <p>
+        SMA hastalığı, çocukların kaslarını etkileyen ciddi bir rahatsızlıktır. Tedavi masrafları oldukça yüksektir. Onlara destek olmak için güvenilir kaynakları aşağıda bulabilirsiniz:
+      </p>
+      <ul>
+        <li><a href="https://www.sma.org.tr/bagis" target="_blank">SMA Derneği Resmî Bağış Sayfası</a></li>
+        <li><a href="https://www.instagram.com/smaumutlari/" target="_blank">@smaumutlari</a> - Güncel kampanyalar</li>
+        <li><a href="https://www.valilikonayli.com" target="_blank">valilikonayli.com</a> - Onaylı bireysel yardım projeleri</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Hayatın Sesi. Tüm hakları saklıdır.
+  </footer>
+
 </body>
 </html>

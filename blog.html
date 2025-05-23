@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hayatın Sesi | Günlük İslami İçerikler</title>
+  <title>Hayatın Sesi | Ana Sayfa ve Blog</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -17,8 +17,18 @@
       background-attachment: fixed;
     }
 
-    .fade-in { opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
-    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .navbar {
       background-color: rgba(0, 0, 0, 0.7);
@@ -36,28 +46,83 @@
       cursor: pointer;
     }
 
-    .menu-links { display: none; flex-direction: column; margin-top: 1rem; }
-    .menu-links a { color: #00ff88; text-decoration: none; padding: 0.5rem 0; font-weight: bold; }
-    .menu-links a:hover { color: #ffffff; }
-    .menu-links.active { display: flex; }
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      margin-top: 1rem;
+    }
 
-    .profile { display: flex; align-items: center; }
-    .profile img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #00ff88; margin-left: 1rem; }
+    .menu-links a {
+      color: #00ff88;
+      text-decoration: none;
+      padding: 0.5rem 0;
+      font-weight: bold;
+    }
 
-    .hero { text-align: center; padding: 4rem 1rem 2rem; background-color: rgba(0, 0, 0, 0.5); }
-    .hero h1 { font-size: 2.5rem; color: #00ff88; }
+    .menu-links a:hover {
+      color: #ffffff;
+    }
 
-    .content-container { max-width: 800px; margin: 2rem auto; padding: 1rem; }
-    .content-box {
+    .menu-links.active {
+      display: flex;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-left: 1rem;
+      border: 2px solid #00ff88;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #00ff88;
+    }
+
+    .content-container,
+    .blog-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .content-box,
+    .blog-post {
       background-color: rgba(0, 0, 0, 0.7);
       padding: 1rem;
       margin-bottom: 1.5rem;
       border-radius: 8px;
       border-left: 5px solid #00ff88;
     }
-    .content-box h2 { margin-top: 0; color: #c0ffc8; }
-    .content-box p { color: #e2ffe7; }
 
+    .content-box h2,
+    .blog-post h2 {
+      margin-top: 0;
+      color: #c0ffc8;
+    }
+
+    .content-box p,
+    .blog-post p {
+      color: #e2ffe7;
+    }
+
+    .blog-post a {
+      color: #00ff88;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -70,16 +135,16 @@
   </div>
 
   <div class="menu-links" id="menuLinks">
-    <a href="index.html">Ana Sayfa</a>
-    <a href="hakkimizda.html">Hakkımızda</a>
-    <a href="blog.html">Blog</a>
-    <a href="youtube.html">YouTube</a>
-    <a href="instagram.html">Instagram</a>
-    <a href="bagis.html">Bağış</a>
+    <a href="#">Ana Sayfa</a>
+    <a href="#">Hakkımızda</a>
+    <a href="#">Blog</a>
+    <a href="#">YouTube</a>
+    <a href="#">Instagram</a>
+    <a href="#">Bağış</a>
   </div>
 
   <section class="hero fade-in">
-    <h1>Hayatın Sesi Blog | Günlük İslami İçerikler</h1>
+    <h1>Hayatın Sesi | Günlük İslami İçerikler</h1>
   </section>
 
   <div class="content-container" id="contentContainer">
@@ -106,27 +171,39 @@
     </div>
   </div>
 
+  <div class="blog-container" id="blogContainer">
+    <!-- Otomatik blog içerikleri buraya eklenecek -->
+  </div>
+
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menuLinks");
       menu.classList.toggle("active");
     }
 
+    // Ayet
     fetch('https://api.alquran.cloud/v1/ayah/2:255')
       .then(response => response.json())
       .then(data => {
         document.getElementById('dailyAyah').textContent = data.data.text;
       });
 
-    fetch('https://hadithapi.com/api/hadiths/random?apiKey=$2y$10$mMluJjun5TcJthpmLMo4uKDqQoGioQyLq0NTLXRUk10uGxgoLDq')
+    // Hadis
+    fetch("https://api.hadis.app/v1/hadis/random")
       .then(response => response.json())
       .then(data => {
-        document.getElementById('dailyHadith').textContent = data.hadith.text;
+        document.getElementById('dailyHadith').textContent = data.data.hadis;
       });
 
-    const duas = ['Allahümme inni es’elüke’l-hüda ve’t-tuka ve’l-‘afafe ve’l-ğina.', 'Rabbena atina fid-dünya haseneten ve fil-ahirati haseneten ve kına azaben-nar.', 'Allahümme ecirni minen-nar.'];
+    // Dua
+    const duas = [
+      'Allahümme inni es’elüke’l-hüda ve’t-tuka ve’l-‘afafe ve’l-ğina.',
+      'Rabbena atina fid-dünya haseneten ve fil-ahirati haseneten ve kına azaben-nar.',
+      'Allahümme ecirni minen-nar.'
+    ];
     document.getElementById('dailyDua').textContent = duas[new Date().getDate() % duas.length];
 
+    // Namaz vakitleri
     fetch('https://api.aladhan.com/v1/timingsByCity?city=Adiyaman&country=Turkey&method=2')
       .then(response => response.json())
       .then(data => {
@@ -139,6 +216,65 @@
           prayerTimesList.appendChild(li);
         }
       });
+
+    // Blog içeriği
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.getElementById("blogContainer");
+
+      // Günün Hadisi
+      fetch("https://api.hadis.app/v1/hadis/random")
+        .then(response => response.json())
+        .then(data => {
+          const post = document.createElement("div");
+          post.className = "blog-post fade-in";
+          post.innerHTML = `
+            <h2>Günün Hadisi</h2>
+            <p>${data.data.hadis}</p>
+            <a href="detay.html?type=hadis&id=${data.data.id}">Devamını Oku</a>
+          `;
+          container.appendChild(post);
+        });
+
+      // Günün Ayeti
+      fetch("https://api.acikkuran.com/v2/ayet/random")
+        .then(response => response.json())
+        .then(data => {
+          const post = document.createElement("div");
+          post.className = "blog-post fade-in";
+          post.innerHTML = `
+            <h2>Günün Ayeti</h2>
+            <p>${data.data.text}</p>
+            <a href="detay.html?type=ayet&id=${data.data.verse_id}">Devamını Oku</a>
+          `;
+          container.appendChild(post);
+        });
+
+      // Sabit yazılar
+      const sabitler = [
+        {
+          baslik: "Sabah Namazına Kalkmak Neden Önemlidir?",
+          aciklama: "Sabah namazı, günün bereketidir. Allah’a en yakın olunan vakitlerde yapılan ibadet, ruhu ve bedeni arındırır...",
+          link: "detay.html?type=makale&id=1"
+        },
+        {
+          baslik: "İslam’da Sosyal Medya Kullanımı",
+          aciklama: "Müslüman kimliğiyle sosyal medyada nasıl bir duruş sergilemeliyiz? Niyetimiz, dilimiz ve davranışlarımız nasıl olmalı?",
+          link: "detay.html?type=makale&id=2"
+        }
+      ];
+
+      sabitler.forEach((yazi, i) => {
+        const post = document.createElement("div");
+        post.className = "blog-post fade-in";
+        post.style.animationDelay = `${(i + 1) * 0.3}s`;
+        post.innerHTML = `
+          <h2>${yazi.baslik}</h2>
+          <p>${yazi.aciklama}</p>
+          <a href="${yazi.link}">Devamını Oku</a>
+        `;
+        container.appendChild(post);
+      });
+    });
   </script>
 </body>
   </html>

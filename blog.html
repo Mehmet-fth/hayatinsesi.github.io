@@ -1,9 +1,10 @@
-<!DOCTYPE html><html lang="tr">
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog | Hayatın Sesi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hayatın Sesi | Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -14,213 +15,258 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-    }.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s forwards;
-}
+    }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
 
-.navbar {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.menu-toggle {
-  font-size: 2rem;
-  color: #00ff88;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.menu-links {
-  display: none;
-  flex-direction: column;
-  margin-top: 1rem;
-}
+    .menu-toggle {
+      font-size: 2rem;
+      color: #00ff88;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
 
-.menu-links a {
-  color: #00ff88;
-  text-decoration: none;
-  padding: 0.5rem 0;
-  font-weight: bold;
-}
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      margin-top: 1rem;
+    }
 
-.menu-links a:hover {
-  color: #ffffff;
-}
+    .menu-links a {
+      color: #00ff88;
+      text-decoration: none;
+      padding: 0.5rem 0;
+      font-weight: bold;
+    }
 
-.menu-links.active {
-  display: flex;
-}
+    .menu-links a:hover {
+      color: #ffffff;
+    }
 
-.profile {
-  display: flex;
-  align-items: center;
-}
+    .menu-links.active {
+      display: flex;
+    }
 
-.profile img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-left: 1rem;
-  border: 2px solid #00ff88;
-}
+    .profile {
+      display: flex;
+      align-items: center;
+    }
 
-.hero {
-  text-align: center;
-  padding: 4rem 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.5);
-}
+    .profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-left: 1rem;
+      border: 2px solid #00ff88;
+    }
 
-.hero h1 {
-  font-size: 2.5rem;
-  color: #00ff88;
-}
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
-.category-filter {
-  text-align: center;
-  margin: 1rem;
-}
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #00ff88;
+    }
 
-.category-filter button {
-  background-color: #00ff88;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin: 0.3rem;
-  color: #000;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    .category-filter {
+      text-align: center;
+      margin: 1rem;
+    }
 
-.category-filter button:hover {
-  background-color: #ffffff;
-}
+    .category-filter button {
+      background-color: #00ff88;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0.3rem;
+      color: #000;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-.blog-container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-}
+    .category-filter button:hover {
+      background-color: #ffffff;
+    }
 
-.blog-post {
-  background-color: rgba(0, 0, 0, 0.7);
-  border-left: 5px solid #00ff88;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
-}
+    .blog-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
 
-.blog-post h2 {
-  margin-top: 0;
-  color: #c0ffc8;
-}
+    .blog-post {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-left: 5px solid #00ff88;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+    }
 
-.blog-post p {
-  color: #e2ffe7;
-}
+    .blog-post h2 {
+      margin-top: 0;
+      color: #c0ffc8;
+    }
 
-.blog-post a {
-  color: #00ff88;
-  text-decoration: underline;
-}
+    .blog-post p {
+      color: #e2ffe7;
+    }
 
+    .blog-post a {
+      color: #00ff88;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <div class="navbar">
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
     <div class="profile">
       <span style="color: #00ff88; font-weight: bold;">Hayatın Sesi</span>
       <img src="images/hayatinsesi-logo.png" alt="Profil Resmi" />
     </div>
-  </div>  <div class="menu-links" id="menuLinks">
+  </div>
+
+  <div class="menu-links" id="menuLinks">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimizda.html">Hakkımızda</a>
     <a href="blog.html">Blog</a>
     <a href="youtube.html">YouTube</a>
     <a href="instagram.html">Instagram</a>
     <a href="bagis.html">Bağış</a>
-  </div>  <section class="hero fade-in">
+  </div>
+
+  <section class="hero fade-in">
     <h1>Hayatın Sesi Blog</h1>
-  </section>  <div class="category-filter">
+  </section>
+
+  <div class="category-filter">
     <button onclick="filterPosts('Tümü')">Tümü</button>
     <button onclick="filterPosts('Dua')">Dua</button>
     <button onclick="filterPosts('Hadis')">Hadis</button>
     <button onclick="filterPosts('Günlük Hayat')">Günlük Hayat</button>
-  </div>  <div class="blog-container" id="blogContainer"></div>  <script>
+    <button onclick="filterPosts('Ayet')">Ayet</button>
+  </div>
+
+  <div class="blog-container" id="blogContainer"></div>
+
+  <script src="veri.js"></script>
+  <script>
     function toggleMenu() {
       const menu = document.getElementById("menuLinks");
       menu.classList.toggle("active");
     }
 
-    const blogPosts = [
-      {
-        id: 1,
-        title: "Sabah Namazına Kalkmak Neden Önemlidir?",
-        summary: "Sabah namazı, günün bereketidir. Allah’a en yakın olunan vakitlerde yapılan ibadet, ruhu ve bedeni arındırır...",
-        category: "Günlük Hayat",
-        link: "detay.html?type=makale&id=1"
-      },
-      {
-        id: 2,
-        title: "İslam’da Sosyal Medya Kullanımı",
-        summary: "Müslüman kimliğiyle sosyal medyada nasıl bir duruş sergilemeliyiz? Niyetimiz, dilimiz ve davranışlarımız nasıl olmalı?",
-        category: "Günlük Hayat",
-        link: "detay.html?type=makale&id=2"
-      },
-      {
-        id: 3,
-        title: "Duaların Gücü ve Kabulü",
-        summary: "Dua, kulun Rabbi ile iletişimi, içini dökmesi ve samimi niyetiyle hayra yönelmesidir. Kabul şartları nelerdir?",
-        category: "Dua",
-        link: "detay.html?type=makale&id=3"
-      },
-      {
-        id: 4,
-        title: "Kısa ve Özlü Hadisler",
-        summary: "Peygamber Efendimiz (s.a.v)’in kısa, özlü ve hayatımıza yön verecek hadislerinden bazıları...",
-        category: "Hadis",
-        link: "detay.html?type=makale&id=4"
-      }
-    ];
-
-    function renderPosts(filter = "Tümü") {
+    function filterPosts(category) {
       const container = document.getElementById("blogContainer");
       container.innerHTML = "";
-
-      const filteredPosts = filter === "Tümü" 
-        ? blogPosts 
-        : blogPosts.filter(post => post.category === filter);
-
-      filteredPosts.forEach(post => {
+      const filtered = blogVerileri.filter(girdi => category === "Tümü" || girdi.kategori === category);
+      filtered.forEach(girdi => {
         const div = document.createElement("div");
         div.className = "blog-post fade-in";
         div.innerHTML = `
-          <h2>${post.title}</h2>
-          <p>${post.summary}</p>
-          <a href="${post.link}">Devamını Oku</a>
+          <h2>${girdi.baslik}</h2>
+          <p>${girdi.ozet}</p>
+          <a href="gunluk.html?id=${girdi.id}">Devamını Oku</a>
         `;
         container.appendChild(div);
       });
     }
 
-    function filterPosts(category) {
-      renderPosts(category);
-    }
+    window.onload = () => filterPosts("Tümü");
+  </script>
+  <!-- Devam: Blog sayfasında veri.js'den veri çekme ve entegre içerik -->
+<script src="veri.js"></script>
 
-    window.onload = () => renderPosts("Tümü");
-  </script></body>
-      </html>
+<script>
+  // veri.js içinden gelen veriyle blog yazılarını doldur
+  function renderPostsFromData(filter = "Tümü") {
+    const container = document.getElementById("blogContainer");
+    container.innerHTML = "";
+
+    const filtered = filter === "Tümü"
+      ? blogVerileri
+      : blogVerileri.filter(post => post.category === filter);
+
+    filtered.forEach(post => {
+      const div = document.createElement("div");
+      div.className = "blog-post fade-in";
+      div.innerHTML = `
+        <h2>${post.title}</h2>
+        <p>${post.summary}</p>
+        <a href="${post.link}">Devamını Oku</a>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  function filterPosts(category) {
+    renderPostsFromData(category);
+  }
+
+  window.onload = () => renderPostsFromData("Tümü");
+  <!-- Gunluk.html için örnek yapı -->
+<!-- gunluk.html (günlük içerik sayfası) -->
+<!-- Yeni bir dosyada olacak ama örnek yapısı burada gösteriliyor: -->
+
+<!-- gunluk.html -->
+<!--
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Günlük İçerik | Hayatın Sesi</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="blog.html">Blog</a>
+  </div>
+
+  <div class="daily-content">
+    <h1>Bugünün Ayeti</h1>
+    <p id="ayet">Yükleniyor...</p>
+
+    <h1>Bugünün Hadisi</h1>
+    <p id="hadis">Yükleniyor...</p>
+
+    <h1>Bugünün Duası</h1>
+    <p id="dua">Yükleniyor...</p>
+  </div>
+
+  <script src="gunluk.js"></script>
+</body>
+</html>
+-->
+
+</script>
+</body> <script src="veri.js"></script>
+  </html>
+
+
+      

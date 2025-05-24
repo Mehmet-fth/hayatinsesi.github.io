@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!DOCTYPE html><html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -15,164 +14,153 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-    }
+    }.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
+}
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s forwards;
-    }
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    .navbar {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.menu-toggle {
+  font-size: 2rem;
+  color: #00ff88;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-    .menu-toggle {
-      font-size: 2rem;
-      color: #00ff88;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+.menu-links {
+  display: none;
+  flex-direction: column;
+  margin-top: 1rem;
+}
 
-    .menu-links {
-      display: none;
-      flex-direction: column;
-      margin-top: 1rem;
-    }
+.menu-links a {
+  color: #00ff88;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  font-weight: bold;
+}
 
-    .menu-links a {
-      color: #00ff88;
-      text-decoration: none;
-      padding: 0.5rem 0;
-      font-weight: bold;
-    }
+.menu-links a:hover {
+  color: #ffffff;
+}
 
-    .menu-links a:hover {
-      color: #ffffff;
-    }
+.menu-links.active {
+  display: flex;
+}
 
-    .menu-links.active {
-      display: flex;
-    }
+.profile {
+  display: flex;
+  align-items: center;
+}
 
-    .profile {
-      display: flex;
-      align-items: center;
-    }
+.profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 1rem;
+  border: 2px solid #00ff88;
+}
 
-    .profile img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-left: 1rem;
-      border: 2px solid #00ff88;
-    }
+.hero {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-    .hero {
-      text-align: center;
-      padding: 4rem 1rem 2rem;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
+.hero h1 {
+  font-size: 2.5rem;
+  color: #00ff88;
+}
 
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #00ff88;
-    }
+.category-filter {
+  text-align: center;
+  margin: 1rem;
+}
 
-    .category-filter {
-      text-align: center;
-      margin: 1rem;
-    }
+.category-filter button {
+  background-color: #00ff88;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  color: #000;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .category-filter button {
-      background-color: #00ff88;
-      border: none;
-      padding: 0.5rem 1rem;
-      margin: 0.3rem;
-      color: #000;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+.category-filter button:hover {
+  background-color: #ffffff;
+}
 
-    .category-filter button:hover {
-      background-color: #ffffff;
-    }
+.blog-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
 
-    .blog-container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
+.blog-post {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-left: 5px solid #00ff88;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
 
-    .blog-post {
-      background-color: rgba(0, 0, 0, 0.7);
-      border-left: 5px solid #00ff88;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 8px;
-    }
+.blog-post h2 {
+  margin-top: 0;
+  color: #c0ffc8;
+}
 
-    .blog-post h2 {
-      margin-top: 0;
-      color: #c0ffc8;
-    }
+.blog-post p {
+  color: #e2ffe7;
+}
 
-    .blog-post p {
-      color: #e2ffe7;
-    }
+.blog-post a {
+  color: #00ff88;
+  text-decoration: underline;
+}
 
-    .blog-post a {
-      color: #00ff88;
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
   <div class="navbar">
-    <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <div class="profile">
       <span style="color: #00ff88; font-weight: bold;">Hayatın Sesi</span>
       <img src="images/hayatinsesi-logo.png" alt="Profil Resmi" />
     </div>
-  </div>
-
-  <div class="menu-links" id="menuLinks">
+  </div>  <div class="menu-links" id="menuLinks">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimizda.html">Hakkımızda</a>
     <a href="blog.html">Blog</a>
     <a href="youtube.html">YouTube</a>
     <a href="instagram.html">Instagram</a>
     <a href="bagis.html">Bağış</a>
-  </div>
-
-  <section class="hero fade-in">
+  </div>  <section class="hero fade-in">
     <h1>Hayatın Sesi Blog</h1>
-  </section>
-
-  <div class="category-filter">
+  </section>  <div class="category-filter">
     <button onclick="filterPosts('Tümü')">Tümü</button>
     <button onclick="filterPosts('Dua')">Dua</button>
     <button onclick="filterPosts('Hadis')">Hadis</button>
     <button onclick="filterPosts('Günlük Hayat')">Günlük Hayat</button>
-  </div>
-
-  <div class="blog-container" id="blogContainer"></div>
-
-  <script>
+  </div>  <div class="blog-container" id="blogContainer"></div>  <script>
     function toggleMenu() {
       const menu = document.getElementById("menuLinks");
       menu.classList.toggle("active");
@@ -234,6 +222,5 @@
     }
 
     window.onload = () => renderPosts("Tümü");
-  </script>
-</body>
+  </script></body>
       </html>

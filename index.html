@@ -2,22 +2,12 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hayatın Sesi | İslami Bilgi ve Huzur Platformu</title>
-  <meta name="description" content="Hayatın Sesi, İslam'a dair ayetler, hadisler, dualar ve faydalı içeriklerle dolu bir platformdur. Allah rızası için hizmet etmektedir." />
-  <meta name="keywords" content="İslam, Ayet, Hadis, Dua, Sabah Namazı, Sosyal Medya, Allah, Hayatın Sesi, dini blog, Kur'an-ı Kerim" />
-  <meta name="Hayatın Sesi" />
-  
-  <meta property="og:title" content="Hayatın Sesi" />
-  <meta property="og:description" content="İslam'a dair içerikler, ayetler, hadisler ve daha fazlası için ziyaret edin." />
-  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/3/37/Holy_Quran.jpg" />
-  <meta property="og:url" content="https://mehmet-fth.github.io/hayatinsesi.github.io/" />
-  <meta property="og:type" content="website" />
-
+  <title>Hayatın Sesi - İslami İçerik Platformu</title>
+  <meta name="description" content="Hayatın Sesi, İslami içerikler, ayetler, hadisler, dualar ve blog yazılarıyla dolu Allah rızası için oluşturulmuş dijital bir platformdur." />
+  <meta name="keywords" content="İslam, ayet, hadis, dua, dini yazılar, Kur'an, maneviyat, Allah rızası" />
+  <meta name="author" content="Hayatın Sesi" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  <link rel="icon" href="images/hayatinsesi-logo.png" type="image/png" />
-
   <style>
     body {
       margin: 0;
@@ -29,24 +19,29 @@
       background-position: center;
       background-attachment: fixed;
     }
+
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 1s forwards;
     }
+
     @keyframes fadeInUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
     .navbar {
       background-color: rgba(0, 0, 0, 0.7);
       padding: 1rem;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
+
     .menu-toggle {
       font-size: 2rem;
       color: #00ff88;
@@ -54,27 +49,33 @@
       border: none;
       cursor: pointer;
     }
+
     .menu-links {
       display: none;
       flex-direction: column;
       margin-top: 1rem;
     }
+
     .menu-links a {
       color: #00ff88;
       text-decoration: none;
       padding: 0.5rem 0;
       font-weight: bold;
     }
+
     .menu-links a:hover {
       color: #ffffff;
     }
+
     .menu-links.active {
       display: flex;
     }
+
     .profile {
       display: flex;
       align-items: center;
     }
+
     .profile img {
       width: 50px;
       height: 50px;
@@ -83,26 +84,49 @@
       margin-left: 1rem;
       border: 2px solid #00ff88;
     }
+
     .hero {
       text-align: center;
       padding: 6rem 1rem 2rem;
       background-color: rgba(0, 0, 0, 0.5);
     }
+
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
       color: #00ff88;
     }
+
     .hero p {
       font-size: 1.2rem;
       max-width: 600px;
       margin: 0 auto 2rem;
     }
+
+    .section {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      margin: 2rem 1rem;
+      border-radius: 10px;
+    }
+
+    .section h2 {
+      color: #00ff88;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .section ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+
     .dua {
       background-color: rgba(10, 46, 26, 0.85);
       padding: 2rem;
       text-align: center;
     }
+
     .dua blockquote {
       font-style: italic;
       font-size: 1.2rem;
@@ -115,9 +139,10 @@
     <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
     <div class="profile">
       <span style="color: #00ff88; font-weight: bold;">Hayatın Sesi</span>
-      <img src="images/hayatinsesi-logo.png" alt="Profil Resmi" />
+      <img src="images/hayatinsesi-logo.png" alt="Hayatın Sesi logosu" />
     </div>
   </div>
+
   <div class="menu-links" id="menuLinks">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimizda.html">Hakkımızda</a>
@@ -126,13 +151,31 @@
     <a href="instagram.html">Instagram</a>
     <a href="bagis.html">Bağış</a>
   </div>
+
   <section class="hero fade-in">
     <h1>Hayatın Sesi'ne Hoş Geldiniz</h1>
     <p>Allah rızası için paylaşılan içeriklerle dolu, huzurlu bir platforma hoş geldiniz.</p>
   </section>
-  <section class="dua fade-in" style="animation-delay: 0.5s;">
+
+  <section class="section fade-in" style="animation-delay: 0.3s;">
+    <h2>Platformumuz Hakkında</h2>
+    <p>Hayatın Sesi, gençlerin ve yetişkinlerin İslam'ı daha iyi anlaması, hayatına rehber etmesi ve manevi huzuru yakalaması için kurulmuş dijital bir platformdur. Her gün ayetler, hadisler, dualar ve blog yazıları ile güncellenir.</p>
+  </section>
+
+  <section class="section fade-in" style="animation-delay: 0.5s;">
+    <h2>İçerik Türlerimiz</h2>
+    <ul>
+      <li><strong>Ayetler:</strong> Kur’an-ı Kerim'den hayat rehberi ayetler</li>
+      <li><strong>Hadisler:</strong> Peygamber Efendimiz’in (s.a.v.) sözleri</li>
+      <li><strong>Dualar:</strong> Günlük hayatta okunabilecek anlamlı dualar</li>
+      <li><strong>Blog:</strong> Gündem, gençlik, ahiret ve hayat üzerine yazılar</li>
+    </ul>
+  </section>
+
+  <section class="dua fade-in" style="animation-delay: 0.7s;">
     <blockquote>“Rabbim! Gönlümü aç, işimi kolaylaştır. Dilimden düğümü çöz ki sözümü anlasınlar.” (Tâhâ Sûresi, 25-28)</blockquote>
   </section>
+
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menuLinks");
@@ -140,4 +183,4 @@
     }
   </script>
 </body>
-  </html>
+                                        </html>

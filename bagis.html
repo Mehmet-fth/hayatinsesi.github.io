@@ -17,19 +17,6 @@
       background-attachment: fixed;
     }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s forwards;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .navbar {
       background-color: rgba(0, 0, 0, 0.7);
       padding: 1rem;
@@ -49,7 +36,8 @@
     .menu-links {
       display: none;
       flex-direction: column;
-      margin-top: 1rem;
+      background-color: rgba(0,0,0,0.8);
+      padding: 1rem;
     }
 
     .menu-links a {
@@ -84,7 +72,7 @@
     .hero {
       text-align: center;
       padding: 3rem 1rem 2rem;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.6);
     }
 
     .hero h1 {
@@ -93,31 +81,42 @@
     }
 
     .donation-section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background-color: rgba(0, 0, 0, 0.6);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .donation-box {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1.5rem;
       border-left: 5px solid #00ff88;
       border-radius: 10px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
     }
 
-    .donation-section h2 {
-      color: #c0ffc8;
+    .donation-box h2 {
+      color: #00ff88;
+      margin-bottom: 1rem;
     }
 
-    .donation-section p, .donation-section a {
-      color: #e2ffe7;
-    }
-
-    .donation-section a {
+    .donation-box a {
+      color: #90ffc2;
       text-decoration: underline;
     }
 
-    @media (max-width: 768px) {
-      .menu-links {
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 1rem;
-        border-top: 1px solid #00ff88;
+    .donation-box p {
+      color: #e2ffe7;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
@@ -140,22 +139,24 @@
     <a href="bagis.html">Bağış</a>
   </div>
 
-  <section class="hero fade-in">
+  <section class="hero">
     <h1>Bağış Yap</h1>
   </section>
 
-  <div class="donation-section fade-in">
-    <h2>SMA Hastaları İçin Özel Bağış</h2>
-    <p>SMA hastaları için umut olmak ister misiniz? Destekleriniz, tedaviye ulaşmalarını kolaylaştırıyor.</p>
-    <p>Instagram: <a href="https://instagram.com/sma.destek" target="_blank">@sma.destek</a></p>
-    <p>Web Sitesi: <a href="https://www.smadestek.org" target="_blank">www.smadestek.org</a></p>
-  </div>
+  <section class="donation-section">
+    <div class="donation-box" style="animation-delay: 0.2s;">
+      <h2>SMA Hastaları İçin Özel Bağış</h2>
+      <p>SMA hastaları için umut olun. Desteklerinizle tedavilerine katkı sağlayabilirsiniz.</p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/sma.destek" target="_blank">@sma.destek</a></p>
+      <p><strong>Web Sitesi:</strong> <a href="https://www.smadestek.org" target="_blank">www.smadestek.org</a></p>
+    </div>
 
-  <div class="donation-section fade-in" style="animation-delay: 0.5s;">
-    <h2>Genel Bağış Sistemi</h2>
-    <p>Hayatın Sesi platformunu desteklemek isterseniz, aşağıdaki e-posta adresiyle iletişime geçebilirsiniz:</p>
-    <p><strong>E-posta:</strong> <a href="mailto:hayatinsesi07@gmail.com">hayatinsesi07@gmail.com</a></p>
-  </div>
+    <div class="donation-box" style="animation-delay: 0.5s;">
+      <h2>Genel Bağış Sistemi</h2>
+      <p>Hayatın Sesi'ni desteklemek için bizimle iletişime geçebilirsiniz.</p>
+      <p><strong>E-Posta:</strong> <a href="mailto:hayatinsesi07@gmail.com">hayatinsesi07@gmail.com</a></p>
+    </div>
+  </section>
 
   <script>
     function toggleMenu() {
@@ -164,4 +165,4 @@
     }
   </script>
 </body>
-  </html>
+    </html>
